@@ -3,12 +3,14 @@ import sideBarReducer from "./sideBarSlice"
 import CustomFiltersReducer from "./customfiltersSlice"
 import popularVideoReducer from "./popularVideoSlice"
 import autoSuggestionsReducer from "./autoSuggestionsSlice"
+import commentsReducer from "./commentsSlice"
 const appStore = configureStore({
     reducer:{
         sideBarList:sideBarReducer,
         customFilters:CustomFiltersReducer,
         popularVideos:popularVideoReducer,
-        autoSuggestions:autoSuggestionsReducer
+        autoSuggestions:autoSuggestionsReducer,
+        comments:commentsReducer
     }
 })
 

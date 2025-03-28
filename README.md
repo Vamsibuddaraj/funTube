@@ -13,6 +13,9 @@
                 - Description
     - WatchVideo screen
         - fetch video ID and embed the iframe element to display the video 
+        - Display comments of the video
+    - Make responsive design
+
 # Libraries
     - React
     - Vite
@@ -22,6 +25,5 @@
 
 
 # Third party
-
     - Google Api 
         -Youtube Api integration
