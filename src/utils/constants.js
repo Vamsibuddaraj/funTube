@@ -1,0 +1,1 @@
+export const VIDEOS_GET =`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&&maxResults=15&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`
