@@ -21,10 +21,11 @@ const sideBar = createSlice({
                 url:"https://w7.pngwing.com/pngs/988/206/png-transparent-computer-icons-history-icon-design-time-angle-text-logo-thumbnail.png"
             }
         ],
-        sideBarView:true
+        sideBarView:false
     },
     reducers:{
         toggleView:(state,action)=>{
+            console.log("redux",state.sideBarView)
             state.sideBarView = !state.sideBarView
         }
     }
