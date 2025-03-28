@@ -1,5 +1,9 @@
 # FunTube
     - Header
+        - Search
+            - used youtube api to fetch auto suggestions
+            - implemented debouncing for decreasing network calls on each key stoke
+            - implemented caching using redux, when removing each character instead of making network call we display the data we store in redux
     - SideBar
     - MainContainer
         - Filters

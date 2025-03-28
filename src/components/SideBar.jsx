@@ -5,7 +5,7 @@ const SideBar = () => {
   const {sideBarList,sideBarView} = useSelector(store=>store.sideBarList)
   if(!sideBarView) return null
   return (
-    <div className='flex -mt-10  flex-col pt-8 bg-gray-200 w-[16%]'>
+    <div className='flex -mt-10  flex-col pt-8 shadow-2xl w-[16%]'>
       {sideBarList.map(item=>{
         return( 
           <div key={item.list} className='flex pl-6  h-12'>
