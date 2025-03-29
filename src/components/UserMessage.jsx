@@ -7,7 +7,7 @@ const UserMessage = ({comment}) => {
         <img className='w-10 h-10 rounded-full' alt='logo' src={authorProfileImageUrl}/>
         <div className='flex flex-col ml-2'>
             <p className='text-l'>{authorDisplayName}</p>
-            <p className='font-thin text-l'>{textDisplay}</p>
+            <p className='font-thin text-[12px]'>{textDisplay}</p>
         </div>
     </div>
   )

@@ -15,6 +15,7 @@
         - fetch video ID and embed the iframe element to display the video 
         - Display comments of the video
     - Make responsive design
+    - History Page
 
 # Libraries
     - React

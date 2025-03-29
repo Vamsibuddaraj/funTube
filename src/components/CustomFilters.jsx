@@ -6,7 +6,7 @@ const CustomFilters = () => {
   return (
     <div className='flex'>
         {customfilters.map(filter=>{
-            return <div className='p-2 mr-2 bg-gray-200 rounded-lg text-[14px]' key={filter}>{filter}</div>
+            return <div className='p-2 mr-2 mb-5 bg-gray-200 rounded-lg text-[14px]' key={filter}>{filter}</div>
         })}
     </div>
   )

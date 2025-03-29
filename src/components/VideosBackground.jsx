@@ -8,7 +8,7 @@ const VideosBackground = () => {
     useGetPopularMovies()
     if(!data) return null
   return (
-    <div className="flex flex-wrap pt-6">
+    <div className="flex flex-wrap pt-6 overflow-y-scroll no-scrollbar h-[85%]">
         {data.map(video=>{
             return <Link key={video.id} to={`/watch?v=${video.id}`}><VideoCard  video={video}/></Link>
         })}

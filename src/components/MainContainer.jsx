@@ -11,7 +11,7 @@ const MainContainer = () => {
     dispatch(toggleView())
   },[])
   return (
-    <div className='ml-3 w-[80%]'>
+    <div className='ml-3 w-[80%] h-screen'>
       <CustomFilters />
       <VideosBackground />
     </div>

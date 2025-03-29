@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import MainContainer from "./components/MainContainer"
 import Body from "./components/Body"
 import WatchPage from "./components/WatchPage"
+import HistoryPage from "./components/HistoryPage"
 
 
 
@@ -13,7 +14,9 @@ function App() {
       <Header />
       <Routes>
         <Route path={"/"} element={<Body />}>
-          <Route path="/" element={<MainContainer />}/>
+          <Route path="/" element={<MainContainer />} />
+          <Route path="/home" element={<MainContainer />}/>
+          <Route path="/history" element={<HistoryPage />}/> 
           <Route path="watch" element={<WatchPage />}/>
         </Route>
       </Routes>
