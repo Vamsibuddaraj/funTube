@@ -12,6 +12,7 @@ const WatchPage = () => {
   const navigate = useNavigate();
   const { sideBarView } = useSelector((store) => store.sideBarList);
   const popularVideos = useSelector((store) => store.popularVideos);
+  const history = useSelector(store=>store.history)
   const [searchParams] = useSearchParams();
   const videoId = searchParams.get("v");
   if (!popularVideos) {
@@ -31,7 +32,9 @@ const WatchPage = () => {
     }
   const popularVideo = popularVideos.find(video=>video.id==videoId)
   console.log("popularVideo",popularVideo)
-  dispatch(addIntoHistory(popularVideo))
+  if(!history.some(his=>his.id==popularVideo.id)){
+    dispatch(addIntoHistory(popularVideo))
+  }
   }, []);
   return (
     <div className="flex md:w-full h-full md:h-screen flex-col md:flex-row justify-around">
