@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path={"/"} element={<Body />}>
           <Route path="/" element={<MainContainer />} />
-          <Route path="/home" element={<MainContainer />}/>
+          {/* <Route path="/home" element={<MainContainer />}/> */}
           <Route path="/history" element={<HistoryPage />}/> 
           <Route path="watch" element={<WatchPage />}/>
         </Route>
