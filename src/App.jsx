@@ -4,6 +4,7 @@ import MainContainer from "./components/MainContainer"
 import Body from "./components/Body"
 import WatchPage from "./components/WatchPage"
 import HistoryPage from "./components/HistoryPage"
+import SignUpSignIn from "./components/SignUpSignIn"
 
 
 
@@ -13,6 +14,7 @@ function App() {
     <>
       <Header />
       <Routes>
+        <Route path={"/login"} element={<SignUpSignIn />} />
         <Route path={"/"} element={<Body />}>
           <Route path="/" element={<MainContainer />} />
           {/* <Route path="/home" element={<MainContainer />}/> */}

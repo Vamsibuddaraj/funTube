@@ -8,7 +8,7 @@ const SideBar = () => {
   );
   if (!sideBarView) return null;
   return (
-    <div className="flex -mt-10 pr-2 h-screen sm:block flex-col pt-8 shadow-2xl w-[26%] md:w-[16%]">
+    <div className="flex -mt-10 pr-2 h-screen sm:block flex-col pt-8 shadow-2xl w-[36%] md:w-[16%]">
       {sideBarList.map((item,index) => {
         return (
           <Link to={index!==0?`/${item.list.toLowerCase()}`:"/"} key={item.list}>
