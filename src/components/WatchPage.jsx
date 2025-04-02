@@ -53,14 +53,14 @@ const WatchPage = () => {
         <div className="w-[90%] pb-4 px-4 pt-2 shadow-2xl">
           <p className="font-bold"> {snippet.title}</p>
           <div className="flex mt-2 h-9 justify-between">
-            <p className="border font-bold shadow-2xl font-serif sm:text-[10px] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl bg-red-500 rounded-2xl border-gray-300 px-2 ">
+            <p className="border px-4 font-bold shadow-2xl font-sans sm:text-[10px] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl bg-red-500 rounded-2xl border-gray-300 text-white ">
               {snippet.channelTitle}
             </p>
             <div className="flex">
-              <p className="cursor-pointer  md:text-[18px] text-[12px] font-mono px-4 bg-gray-300 rounded-xl mr-2">
+              <p className="cursor-pointer pt-1  md:text-[18px] text-[12px] font-sans px-4 bg-gray-300 rounded-xl mr-2">
                 Join
               </p>
-              <p className="cursor-pointer md:text-[18px] text-[12px] px-4 font-mono bg-gray-300 rounded-xl">
+              <p className="cursor-pointer pt-1 md:text-[18px] text-[12px] px-4 font-sans bg-gray-300 rounded-xl">
                 Subscribe
               </p>
             </div>
