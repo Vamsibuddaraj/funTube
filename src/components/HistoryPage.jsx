@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import VideoCard from './VideoCard'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const HistoryPage = () => {
     const history = useSelector(store=>store.history)
+    const user = useSelector(store=>store.user)
+    const navigate = useNavigate()
+    console.log("user",user)
+    useEffect(()=>{
+      if(!user){
+        navigate("/login")
+      }
+    },[user])
     console.log("history",history)
   return (
     <div>

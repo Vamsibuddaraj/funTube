@@ -16,6 +16,7 @@
         - Display comments of the video
     - Make responsive design
     - History Page
+        - Restricted - need to sign up to view the page.
 
 # Libraries
     - React
@@ -28,3 +29,5 @@
 # Third party
     - Google Api 
         -Youtube Api integration
+    - FireBase Api
+        -Authentication
