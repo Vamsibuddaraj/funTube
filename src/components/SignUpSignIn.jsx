@@ -17,7 +17,6 @@ const SignUpSignIn = () => {
     const password = useRef()
     const dispatch = useDispatch()
     const handleSubmit = () => {
-        console.log(email.current.value,password.current.value)
         setStatus(formValidation(email.current.value,password.current.value))
     }
     const authenticate = async () => {
@@ -39,7 +38,6 @@ const SignUpSignIn = () => {
         });
     }
     useEffect(()=>{
-        console.log("useeffect",status)
         if(!user&&email.current.value&&password.current.value){
             authenticate()
         }

@@ -7,13 +7,11 @@ const HistoryPage = () => {
     const history = useSelector(store=>store.history)
     const user = useSelector(store=>store.user)
     const navigate = useNavigate()
-    console.log("user",user)
     useEffect(()=>{
       if(!user){
         navigate("/login")
       }
     },[user])
-    console.log("history",history)
   return (
     <div>
         <h1 className='font-bold pl-5'>History</h1>

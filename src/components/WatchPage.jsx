@@ -22,7 +22,6 @@ const WatchPage = () => {
   const { snippet, statistics } = popularVideos.find(
     (list) => list.id == videoId
   );
-  console.log("videoData", snippet);
   useEffect(() => {
     if (!popularVideos) {
       navigate("/");
@@ -31,7 +30,6 @@ const WatchPage = () => {
       dispatch(toggleView());
     }
   const popularVideo = popularVideos.find(video=>video.id==videoId)
-  console.log("popularVideo",popularVideo)
   if(!history.some(his=>his.id==popularVideo.id)){
     dispatch(addIntoHistory(popularVideo))
   }

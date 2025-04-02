@@ -35,10 +35,6 @@ const Header = () => {
   };
   useEffect(() => {
     if (searchResult) {
-      console.log(
-        "inc;ius---",
-        autoSuggestions.some((item) => item.includes(searchResult))
-      );
       if (!autoSuggestions.some((item) => item.includes(searchResult))) {
         let timerId = setTimeout(() => fetchSuggestions(), 300);
         return () => clearTimeout(timerId);

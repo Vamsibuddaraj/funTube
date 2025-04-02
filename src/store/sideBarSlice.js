@@ -25,7 +25,6 @@ const sideBar = createSlice({
     },
     reducers:{
         toggleView:(state,action)=>{
-            console.log("redux",state.sideBarView)
             state.sideBarView = !state.sideBarView
         }
     }
