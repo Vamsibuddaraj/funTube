@@ -26,7 +26,11 @@ const Header = () => {
     dispatch(toggleView());
   };
   const handleSignOut = () => {
-    dispatch(removeUser())
+    if(user){
+      dispatch(removeUser())
+    }else{
+      navigate("/login")
+    }
   };
   const fetchSuggestions = async () => {
     const data = await fetch(SEARCH_API + searchResult);
@@ -53,12 +57,13 @@ const Header = () => {
           src={HAMBURG_ICON}
           alt="hamburg-icon"
         />
-        <img
+        {/* <img
           onClick={() => navigate("/")}
           className="ml-3 w-25 mt-2 h-6"
           src={FUNTUBE_LOGO}
           alt="funtube-logo"
-        />
+        /> */}
+        <span onClick={() => navigate("/")} className="pt-1 mt-2 h-8 px-3 bg-red-600 rounded-4xl text-white font-bold cursor-pointer">FUNTUBE</span>
       </div>
       <div className="flex w-1/2 flex-col hidden sm:block">
         <div className="flex justify-center">
@@ -93,13 +98,12 @@ const Header = () => {
         />
       </div>
       {signOut && (
-        <div className="absolute right-4 h-24 top-16 w-46 flex flex-col bg-gray-400 items-center">
-          <p className="text-sm">{user&&user.email||"USER"}</p>
+        <div className="absolute right-4 top-16" onMouseDown={(e)=>e.preventDefault()}>
           <button
             onClick={handleSignOut}
-            className="text-[15px] px-3 text-white bg-black cursor-pointer"
+            className="text-[15px] px-3 text-white bg-black cursor-pointer rounded-4xl py-1"
           >
-            Sign out
+            {user?"Sign out":"Sign In"}
           </button>
         </div>
       )}

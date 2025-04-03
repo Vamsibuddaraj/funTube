@@ -12,7 +12,7 @@ const SideBar = () => {
       {sideBarList.map((item,index) => {
         return (
           <Link to={index!==0?`/${item.list.toLowerCase()}`:"/"} key={item.list}>
-            <div className="flex pl-6 h-12">
+            <div className="flex pl-6 h-12 hover:bg-gray-200 pt-1">
               {/* <img className='w-20 h-16' src={item.url} alt={item.name}/> */}
               <p className="font-bold text-[18px]">{item.list}</p>
             </div>

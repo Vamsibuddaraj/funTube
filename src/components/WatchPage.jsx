@@ -35,10 +35,10 @@ const WatchPage = () => {
   }
   }, []);
   return (
-    <div className="flex md:w-full h-full md:h-screen flex-col md:flex-row justify-around">
+    <div className="flex w-full h-full md:h-screen flex-col md:flex-row justify-around">
       <div className="w-[90%] md:w-[70%] ml-10">
         <iframe
-          className="rounded-2xl w-[20%]  aspect-square sm:w-[90%]"
+          className="rounded-2xl w-[90%]  aspect-square sm:w-[90%]"
           width="800"
           height="400"
           src={"https://www.youtube.com/embed/" + videoId}

@@ -3,11 +3,14 @@ import CustomFilters from './CustomFilters'
 import VideosBackground from './VideosBackground'
 import { useDispatch,useSelector } from 'react-redux'
 import { toggleView } from '../store/sideBarSlice'
+import useGetPopularMovies from '../hooks/useGetPopularMovies'
 
 const MainContainer = () => {
   const dispatch = useDispatch()
   const sidebarView = useSelector(store=>store.sideBarList.sideBarView)
   const [fallback,setFallback] = useState(true)
+  useGetPopularMovies()
+
   useEffect(()=>{
     if(!sidebarView){
       dispatch(toggleView())
