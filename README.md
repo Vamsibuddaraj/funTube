@@ -31,3 +31,8 @@
         -Youtube Api integration
     - FireBase Api
         -Authentication
+
+
+# Unit Testing
+    - Jest and react testing framework
+    
