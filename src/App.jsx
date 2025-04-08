@@ -5,6 +5,7 @@ import Body from "./components/Body"
 import WatchPage from "./components/WatchPage"
 import HistoryPage from "./components/HistoryPage"
 import SignUpSignIn from "./components/SignUpSignIn"
+import Otp from "./components/Otp"
 
 
 
@@ -12,8 +13,9 @@ function App() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Routes>
+        <Route path="otp" element={<Otp />}/>
         <Route path={"/login"} element={<SignUpSignIn />} />
         <Route path={"/"} element={<Body />}>
           <Route path="/" element={<MainContainer />} />
