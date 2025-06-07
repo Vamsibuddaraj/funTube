@@ -12,6 +12,7 @@ const VideoCard = ({ video }) => {
       <img
         className=" w-120 h-70 md:w-65 md:h-45 rounded-2xl"
         src={thumbnail}
+        alt={title}
       />
       <span className="text-[12px] bottom-25 right-4 bg-black text-white px-2 absolute rounded-2xl ">{formattedTime}</span>
       <p className="font-medium text-[12px] truncate w-full overflow-hidden whitespace-nowrap text-ellipsis">{title}</p>
