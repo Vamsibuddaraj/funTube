@@ -29,11 +29,17 @@ const WatchPage = () => {
     if (sideBarView) {
       dispatch(toggleView());
     }
-  const popularVideo = popularVideos.find(video=>video.id==videoId)
-  if(!history.some(his=>his.id==popularVideo.id)){
-    dispatch(addIntoHistory(popularVideo))
-  }
-  }, []);
+    const popularVideo = popularVideos.find(video=>video.id==videoId)
+    if(!history.some(his=>his.id==popularVideo.id)){
+      dispatch(addIntoHistory(popularVideo))
+    }
+    return () => {
+      // Cleanup function
+      if (sideBarView) {
+        dispatch(toggleView());
+      }
+    };
+  }, [popularVideos, navigate, sideBarView, dispatch, videoId, history]);
   return (
     <div className="flex w-full h-full md:h-screen flex-col md:flex-row justify-around">
       <div className="w-[90%] md:w-[70%] ml-10">

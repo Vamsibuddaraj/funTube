@@ -4,22 +4,34 @@ import { useDispatch } from "react-redux"
 import { addComments } from "../store/commentsSlice"
 
 const useGetComments = (id) => {
-    const dispatch  = useDispatch()
-    const fetchcomments = async () => {
-        const comments =  await fetch(COMMENTS_API+id)
-        const {items:commentsJson} = await comments.json()
-        const processData = commentsJson.map(comment=>{
-            return {
-                ["id"]:comment.id,
-                ["authorProfileImageUrl"]:comment.snippet.topLevelComment.snippet.authorProfileImageUrl,
-                ["authorDisplayName"]:comment.snippet.topLevelComment.snippet.authorDisplayName,
-                ["textDisplay"]:comment.snippet.topLevelComment.snippet.textDisplay
+    const dispatch = useDispatch()
+    const fetchcomments = async (signal) => {
+        try {
+            const comments = await fetch(COMMENTS_API+id, { signal })
+            const {items:commentsJson} = await comments.json()
+            const processData = commentsJson.map(comment=>{
+                return {
+                    ["id"]:comment.id,
+                    ["authorProfileImageUrl"]:comment.snippet.topLevelComment.snippet.authorProfileImageUrl,
+                    ["authorDisplayName"]:comment.snippet.topLevelComment.snippet.authorDisplayName,
+                    ["textDisplay"]:comment.snippet.topLevelComment.snippet.textDisplay
+                }
+            })
+            dispatch(addComments(processData))
+        } catch (error) {
+            if (error.name === 'AbortError') {
+                // Handle abort error silently
+                return;
             }
-        })
-        dispatch(addComments(processData))
+            console.error('Error fetching comments:', error);
+        }
     }
     useEffect(()=>{
-        fetchcomments()
+        const controller = new AbortController();
+        fetchcomments(controller.signal);
+        return () => {
+            controller.abort();
+        }
     },[id])
 }
 
